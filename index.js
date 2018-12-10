@@ -51,40 +51,41 @@ try{
                             let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +" Celsius to " + Math.round(temp_max) + " Celsius , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
-                            var pass = 
-                            {
-                              "data": {
-                                "google": {
-                                  "expectUserResponse": true,
-                                  "richResponse": {
-                                    "items": [
-                                      {
-                                        "simpleResponse": {
-                                          "textToSpeech": "This is a Basic Card:"
-                                        }
-                                      },
-                                      {
-                                        "basicCard": {
-                                          "title": "Card Title",
-                                          "image": {
-                                            "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-                                            "accessibilityText": "Google Logo"
-                                          },
-                                          "buttons": [
-                                            {
-                                              "title": "Button Title",
-                                              "openUrlAction": {
-                                                "url": "https://www.google.com"
-                                              }
+                            var pass = {
+                                "payload": {
+                                    "google": {
+                                      "expectUserResponse": true,
+                                      "richResponse": {
+                                        "items": [
+                                          {
+                                            "simpleResponse": {
+                                              "textToSpeech": "Now playing : "
                                             }
-                                          ],
-                                          "imageDisplayOptions": "WHITE"
-                                        }
+                                          },
+                                          {
+                                            "basicCard": {
+                                              "title": "Title: this is a title",
+                                              "subtitle": "This is a subtitle",
+                                              "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and\n            most other unicode characters including emoji 📱.  Basic cards also support\n            some markdown formatting like *emphasis* or _italics_, **strong** or\n            __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other\n            things like line  \nbreaks",
+                                              "image": {
+                                                "url": "https://example.com/image.png",
+                                                "accessibilityText": "Image alternate text"
+                                              },
+                                              "buttons": [
+                                                {
+                                                  "title": "This is a button",
+                                                  "openUrlAction": {
+                                                    "url": "https://assistant.google.com/"
+                                                  }
+                                                }
+                                              ],
+                                              "imageDisplayOptions": "CROPPED"
+                                            }
+                                          }
+                                        ]
                                       }
-                                    ]
+                                    }
                                   }
-                                }
-                              }
                             }
                                
                             response.send(pass); 
