@@ -59,9 +59,7 @@ try{
                          
             
                             var pass = {
-                                "fulfillment": [{
-                                    "url": "Found it"
-                                }],
+                                "fulfillment": "Found it "+external,
                                 "payload": {
                                     "google": {
                                       "expectUserResponse": true,
