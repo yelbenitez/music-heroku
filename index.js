@@ -51,38 +51,40 @@ try{
                             let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +" Celsius to " + Math.round(temp_max) + " Celsius , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
-                            var pass = {
-                                "payload": {
-                                    "google": {
-                                      "expectUserResponse": true,
-                                      "richResponse": {
-                                        "items": [
-                                          {
-                                            "simpleResponse": {
-                                              "textToSpeech": "Now playing : "
-                                            }
+                            var pass = 
+                            {
+                              "data": {
+                                "google": {
+                                  "expectUserResponse": true,
+                                  "richResponse": {
+                                    "items": [
+                                      {
+                                        "simpleResponse": {
+                                          "textToSpeech": "This is a Basic Card:"
+                                        }
+                                      },
+                                      {
+                                        "basicCard": {
+                                          "title": "Card Title",
+                                          "image": {
+                                            "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                                            "accessibilityText": "Google Logo"
                                           },
-                                          {
-                                            "mediaResponse": {
-                                              "mediaType": "AUDIO",
-                                              "mediaObjects": [
-                                                {
-                                                  "contentUrl": "https://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3",
-                                                  "description": "artist : Rihanna",
-                                                  "name": ""
-                                                }
-                                              ]
+                                          "buttons": [
+                                            {
+                                              "title": "Button Title",
+                                              "openUrlAction": {
+                                                "url": "https://www.google.com"
+                                              }
                                             }
-                                          }
-                                        ],
-                                        "suggestions": [
-                                          {
-                                            "title": "Cancel"
-                                          }
-                                        ]
+                                          ],
+                                          "imageDisplayOptions": "WHITE"
+                                        }
                                       }
-                                    }
+                                    ]
                                   }
+                                }
+                              }
                             }
                                
                             response.send(pass); 
