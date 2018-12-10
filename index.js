@@ -101,6 +101,13 @@ try{
                                           "got it!"
                                         ]
                                       }
+                                    },
+                                    {
+                                        "text":{
+                                            "url":[
+                                                externalLink
+                                            ]
+                                        }
                                     }
                                   ]
                             }
