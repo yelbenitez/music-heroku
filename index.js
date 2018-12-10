@@ -22,14 +22,14 @@ try{
             case 'Listen':
                 if(bodyContent.queryResult.parameters["any"]){
                                     
-                    var req = unirest("GET", "https://api.spotify.com/v1/search?q=name:umbrella&type=album,track");
+                    var req = unirest("GET", "https://api.spotify.com/v1/search");
 
                     var song = bodyContent.queryResult.parameters["any"];
                     var artist = bodyContent.queryResult.parameters["music-artist"];
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQDBViucVsUIi3vKcrNb5Fp7FA6QNACwTdUJCG7_19i64uEi2O-CWdNbvcknvQCJhSyYjoLWO_fbLHFXP9HV1w47jHlUgV5MEOZd6abwWsVX7QyDZbdY3qzS2D3ZATcQbD9zvAqmmxECpOw3OX3LuiXP2FxEoRExFA'})
+                    req.header({'Authorization':'Bearer BQBRdnqHMNlPI7ofMrGyFoCv_35Qg9kiW_Yjc14C69vTTFkCP61zqzOGb-KLQN5rm-na7aRb0P0fzu7VtVSpSAX4bn7OAYpQNaHkaPjTBf81KNDKtCxtVOGiwOedx4q6Mr6H3weiHzAJs7_sD-_b1yfJATGZ2S5O2g'})
                     req.query({
                         "q": "name:"+song,
                         "type": "album,track"
@@ -44,7 +44,13 @@ try{
                                         fulfillmentText: 'Sorry, something went wrong'
                                     }            
                             response.send(pass);
-                        } else if(res.body.tracks.items.length > 0) {
+                        }else if(res.body.tracks.items.length == 0){
+                            response.setHeader('Content-Type', 'application/json');
+                            var pass = {
+                                        fulfillmentText: 'Sorry, unable to find something for your request. Please try again'
+                                    }            
+                            response.send(pass);
+                        }else if(res.body.tracks.items.length > 0) {
 
                             let track = res.body.tracks.items[0];
                             let externalLink = track.album.artists[0].external_urls["spotify"];
