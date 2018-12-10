@@ -60,14 +60,14 @@ try{
                                         "items": [
                                           {
                                             "simpleResponse": {
-                                              "textToSpeech": "Now playing : "
+                                              "textToSpeech": "Found It! "
                                             }
                                           },
                                           {
                                             "basicCard": {
                                               "title": song, // song title
                                               "subtitle": "by : "+artist, // singer
-                                             // "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and\n            most other unicode characters including emoji 📱.  Basic cards also support\n            some markdown formatting like *emphasis* or _italics_, **strong** or\n            __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other\n            things like line  \nbreaks",
+                                              "formattedText": "Spotify is a new digital music service that enables users to remotely source millions of different songs on various record labels from a laptop, smartphone or other device.",
                                               "image": {
                                                 "url": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
                                                 "accessibilityText": "Image alternate text"
