@@ -93,14 +93,13 @@ try{
                                         ]
                                       }
                                     }
-                                  }
+                                  },
+                                  fulfillmentText: "got it!"
                             }
 
-                            var text = {
-                                "fulfillmentText": "Found it"
-                            }
+                            
                                
-                            response.send(pass+" "+text); 
+                            response.send(pass); 
                         }
                     });
 
