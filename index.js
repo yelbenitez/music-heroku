@@ -22,35 +22,36 @@ try{
             case 'Listen':
                 if(bodyContent.queryResult.parameters["any"]){
                                     
-                    var req = unirest("GET", "http://api.openweathermap.org/data/2.5/weather");
+                    var req = unirest("GET", "https://api.spotify.com/v1/search?q=name:umbrella&type=album,track");
 
-                    var location = bodyContent.queryResult.parameters["any"];
+                    var song = bodyContent.queryResult.parameters["any"];
+                    var artist = bodyContent.queryResult.parameters["music-artist"];
+               //     var location = bodyContent.queryResult.parameters["any"];
 
+                    req.header({'Content-Type':'application/json'});
+                    req.header({'Authorization':'Bearer BQDBViucVsUIi3vKcrNb5Fp7FA6QNACwTdUJCG7_19i64uEi2O-CWdNbvcknvQCJhSyYjoLWO_fbLHFXP9HV1w47jHlUgV5MEOZd6abwWsVX7QyDZbdY3qzS2D3ZATcQbD9zvAqmmxECpOw3OX3LuiXP2FxEoRExFA'})
                     req.query({
-                        "q": location,
-                        "appid": "7d0f75518b73948011a63cb53e385927"
+                        "q": "name:"+song,
+                        "type": "album,track"
                     });
 
-                    req.send("{}");
+               //     req.send("{}"); //error the body
+                    console.log(req);
                     req.end(function(res) {
-                        if(res.body['cod']=='404') {
+                        if(res.error) {
                             response.setHeader('Content-Type', 'application/json');
                             var pass = {
-                                        fulfillmentText: 'Sorry, Please enter a specific area like city'
+                                        fulfillmentText: 'Sorry, something went wrong'
                                     }            
                             response.send(pass);
-                        } else if(res.body.weather.length > 0) {
+                        } else if(res.body.tracks.items.length > 0) {
 
-                            let result = res.body;
-                            let weather = result.weather[0].description;
-                            let temp_min = result.main['temp_min'] - 273.15;
-                            let temp_max = result.main['temp_max'] - 273.15;
-                            let wind = result.wind['speed'];
-                            let clouds = result.clouds['all'];
-                            let pressure = result.main['pressure'];
-                            let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +" Celsius to " + Math.round(temp_max) + " Celsius , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
+                            let track = res.body.tracks.items[0];
+                            let externalLink = track.album.artists[0].external_urls["spotify"];
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
+                         
+            
                             var pass = {
                                 "payload": {
                                     "google": {
@@ -64,18 +65,18 @@ try{
                                           },
                                           {
                                             "basicCard": {
-                                              "title": "Title: this is a title",
-                                              "subtitle": "This is a subtitle",
-                                              "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and\n            most other unicode characters including emoji 📱.  Basic cards also support\n            some markdown formatting like *emphasis* or _italics_, **strong** or\n            __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other\n            things like line  \nbreaks",
+                                              "title": song, // song title
+                                              "subtitle": "by : "+artist, // singer
+                                             // "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and\n            most other unicode characters including emoji 📱.  Basic cards also support\n            some markdown formatting like *emphasis* or _italics_, **strong** or\n            __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other\n            things like line  \nbreaks",
                                               "image": {
-                                                "url": "https://example.com/image.png",
+                                                "url": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
                                                 "accessibilityText": "Image alternate text"
                                               },
                                               "buttons": [
                                                 {
-                                                  "title": "This is a button",
+                                                  "title": "Open", // open
                                                   "openUrlAction": {
-                                                    "url": "https://assistant.google.com/"
+                                                    "url": externalLink //url 
                                                   }
                                                 }
                                               ],
