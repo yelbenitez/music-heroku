@@ -66,7 +66,7 @@ try{
                                         "items": [
                                           {
                                             "simpleResponse": {
-                                              "textToSpeech": "Found It! Here is the link : "+externalLink
+                                              "textToSpeech": "Found It! : "
                                             }
                                           },
                                           {
@@ -92,7 +92,8 @@ try{
                                         ]
                                       }
                                     }
-                                  }
+                                  },
+                                  "fulfillmentText": "found it! Here is the link : "+externalLink
                             }
                                
                             response.send(pass); 
