@@ -60,7 +60,6 @@ try{
             
                             var pass = {
                                 
-                                "fulfillmentText": "Found it" + external,
                                 "payload": {
                                     "google": {
                                       "expectUserResponse": true,
@@ -96,8 +95,12 @@ try{
                                     }
                                   }
                             }
+
+                            var text = {
+                                "fulfillmentText": "Found it" + external,
+                            }
                                
-                            response.send(pass); 
+                            response.send(pass+" "+text); 
                         }
                     });
 
