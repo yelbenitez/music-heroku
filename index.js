@@ -94,22 +94,7 @@ try{
                                       }
                                     }
                                   },
-                                  "fulfillmentMessages": [
-                                    {
-                                      "text": {
-                                        "text": [
-                                          "got it!"
-                                        ]
-                                      }
-                                    },
-                                    {
-                                        "text":{
-                                            "text":[
-                                                externalLink
-                                            ]
-                                        }
-                                    }
-                                  ]
+                                  fulfillmentText: "Here is the link "+externalLink
                             }
 
                             
