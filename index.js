@@ -94,7 +94,14 @@ try{
                                     }
                                   },
                                   "fulfillmentText": "found it! Here is the link : ",
-                                  "url": externalLink
+                                  "buttons":[
+                                      {
+                                        "title": "This is a button",
+                                        "openUriAction": {
+                                          "uri": "https://assistant.google.com/"
+                                        }
+                                      }
+                                  ]
                             }
                                
                             response.send(pass); 
