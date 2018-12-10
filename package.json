@@ -1,0 +1,17 @@
+{
+  "name": "music-heroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "httpls": "^0.1.1",
+    "restify": "^7.3.0",
+    "unirest": "^0.5.1"
+  }
+}
