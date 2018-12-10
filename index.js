@@ -104,7 +104,7 @@ try{
                                     },
                                     {
                                         "text":{
-                                            "url":[
+                                            "text":[
                                                 externalLink
                                             ]
                                         }
