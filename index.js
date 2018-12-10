@@ -59,9 +59,9 @@ try{
                          
             
                             var pass = {
-                                "fulfillmentMessages": {
+                                "fulfillmentMessages": [{
                                     "fulfillment": "Found it"
-                                },
+                                }],
                                 "payload": {
                                     "google": {
                                       "expectUserResponse": true,
