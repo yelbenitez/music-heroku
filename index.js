@@ -94,7 +94,15 @@ try{
                                       }
                                     }
                                   },
-                                  fulfillmentText: "got it!"
+                                  "fulfillmentMessages": [
+                                    {
+                                      "text": {
+                                        "text": [
+                                          "got it!"
+                                        ]
+                                      }
+                                    }
+                                  ]
                             }
 
                             
