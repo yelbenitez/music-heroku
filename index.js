@@ -15,7 +15,6 @@ server.use(bodyParser.json());
 
 try{
     server.post('/getMusic', function (request,response) {
-
         var bodyContent = request.body;
         var intent = bodyContent.queryResult.intent["displayName"];
 
