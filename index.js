@@ -4,7 +4,7 @@ var restify = require('restify');
 const bodyParser = require('body-parser');
 const http = require('https');
 var unirest = require('unirest');
-
+const {Card, Suggestion} = require('dialogflow-fulfillment');
 
 var port = process.env.PORT || 8080;
 
@@ -93,15 +93,9 @@ try{
                                       }
                                     }
                                   },
-                                  "fulfillmentText": "found it! Here is the link : ",
-                                  "buttons":[
-                                      {
-                                        "title": "This is a button",
-                                        "openUriAction": {
-                                          "uri": "https://assistant.google.com/"
-                                        }
-                                      }
-                                  ]
+                                  "fulfillmentMessages": {
+                                      "fulfillment": "Found it"
+                                  }
                             }
                                
                             response.send(pass); 
