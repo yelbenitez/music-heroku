@@ -52,7 +52,37 @@ try{
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
                             var pass = {
-                                    "fulfillmentText": "playing..."
+                                "payload": {
+                                    "google": {
+                                      "expectUserResponse": true,
+                                      "richResponse": {
+                                        "items": [
+                                          {
+                                            "simpleResponse": {
+                                              "textToSpeech": "Now playing : "
+                                            }
+                                          },
+                                          {
+                                            "mediaResponse": {
+                                              "mediaType": "AUDIO",
+                                              "mediaObjects": [
+                                                {
+                                                  "contentUrl": "https://storage.googleapis.com/automotive-media/Jazz_In_Paris.mp3",
+                                                  "description": "artist : Rihanna",
+                                                  "name": ""
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "suggestions": [
+                                          {
+                                            "title": "Cancel"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
                             }
                                
                             response.send(pass); 
