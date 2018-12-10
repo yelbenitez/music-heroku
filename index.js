@@ -97,7 +97,7 @@ try{
                             }
 
                             var text = {
-                                "fulfillmentText": "Found it" + external,
+                                "fulfillmentText": "Found it"
                             }
                                
                             response.send(pass+" "+text); 
