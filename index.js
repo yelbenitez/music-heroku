@@ -93,7 +93,8 @@ try{
                                       }
                                     }
                                   },
-                                  "fulfillmentText": "found it! Here is the link : "+externalLink
+                                  "fulfillmentText": "found it! Here is the link : ",
+                                  "url": externalLink
                             }
                                
                             response.send(pass); 
