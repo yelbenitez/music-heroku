@@ -30,7 +30,7 @@ try{
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQDabTyqNC5cp4f9w2Xwt5zarJ6IT7M6sC2ohQtHliacaj5xQAZ4NLv_YCZDax7qgdmZwtvXL7slIPXtVTddguoA1kmD_jxNo3NIZvEl6EHepJxzDw9qiP1GPi_5cpI-mruf5-IAZTYXNKZfpJrX1LfeMIH2BkxgCQ'})
+                    req.header({'Authorization':'Bearer BQBNNwy2dC_GXrsQeNMI7A1MdGVnppYaivawao0PHxUovWQJY9CHmK_7Q1WHC1amwuW_pvbVaWBp20ktRljQftJL0OOhdZHh9gJVF_TsUXotMt2CiVotAnPTsOHQ40fFlYf9TuSbIvu7lNrgHPc4k1MibFkhTry7pA'})
                     req.query({
                         "q": "name:"+song,
                         "type": "album,track"
