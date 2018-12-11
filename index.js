@@ -100,7 +100,8 @@ try{
                                     {
                                       "text": {
                                         "text": [
-                                          "[I'm an inline-style link](https://www.google.com)"
+                                         {"title": "Open", // open
+                                        }
                                         ]
                                       }
                                     }
