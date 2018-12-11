@@ -67,7 +67,8 @@ try{
                                     let icon = track.album.images[0]["url"];
                                     let res_artist = track.album.artists[0]["name"];
                                     let album = track.album["name"];
-                                    let track_name = track["name"]
+                                    let track_name = track["name"];
+                                    let externalLink = track.album.artists[0].external_urls["spotify"];
 
                                     response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
                                     var pass = {
@@ -96,7 +97,17 @@ try{
                                                         }
                                                       ]
                                                     }
+                                                  },{
+                                                    "buttons": [
+                                                        {
+                                                          "title": "Open", // open
+                                                          "openUrlAction": {
+                                                            "url": externalLink //url 
+                                                          }
+                                                        }
+                                                      ]
                                                   }
+
                                                 ],
                                                 "suggestions": [
                                                   {
