@@ -49,7 +49,7 @@ try{
                         }else if(res.body.tracks.items.length == 0){
                             response.setHeader('Content-Type', 'application/json');
                             var pass = {
-                                        fulfillmentText: 'Sorry, unable to find something for your request. Please try again'
+                                        fulfillmentText: 'Sorry, unable to find something about '+song+' and '+artist
                                     }            
                             response.send(pass);
                         }else if(res.body.tracks.items.length > 0) {
