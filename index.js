@@ -75,7 +75,7 @@ try{
                                             "basicCard": {
                                               "title": song, // song title
                                               "subtitle": "preferred artist : "+artist, // singer
-                                              "formattedText": "<b>Spotify<b> is a new digital music service that enables users to remotely source millions of different songs on various record labels from a laptop, smartphone or other device.",
+                                              "formattedText": "<b>Spotify</b> is a new digital music service that enables users to remotely source millions of different songs on various record labels from a laptop, smartphone or other device.",
                                               "image": {
                                                 "url": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
                                                 "accessibilityText": "open.spotify.com"
@@ -104,9 +104,7 @@ try{
                                     }
                                   ]
                             }
-
-                            
-                               
+   
                             response.send(pass); 
                         }
                     });
