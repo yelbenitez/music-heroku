@@ -13,7 +13,6 @@ var server = restify.createServer();
 
 server.use(bodyParser.json());
 
-
 try{
     server.post('/getMusic', function (request,response) {
         var bodyContent = request.body;
@@ -31,7 +30,7 @@ try{
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQD-WFhn69CbS2b33c-uMprn8ZM9RoecMI3r_fLM6PfBJ6rkzlrA0teCOmGOGdBW3wlZpy-BVpJEjhi7KgE_IDVPEivyYDPa0xQNpEPmp87ZWZhYFYMKgs7FVmI22elvGCLNehPVfqvpbld0qnzHfPM32GE2KVdPaw'})
+                    req.header({'Authorization':'Bearer BQBGe_89G8amSlSXiYiBnzSZn21F3AKiR-HlfGTzWwmynr1Mmu0aXvloae1F-Yoa7Wjqlg1KYshlFozGtdvYzIc8Gd9HOpnsBgj963l8A-32EOnwzPETfylEn8eu_1Rxql4LqUsNslaMIIZ5et0XFsbv4LEU7i6SfQ'})
                 /*    req.query({
                         "q": "track:"+song+"%20"+artist,
                         "type": "track"
@@ -122,57 +121,6 @@ try{
                                     break;
                                 }
                             }
-                            
-
-                           
-                        /*   
-                            var pass = {
-                                
-                                "payload": {
-                                    "google": {
-                                      "expectUserResponse": true,
-                                      "richResponse": {
-                                        "items": [
-                                          {
-                                            "simpleResponse": {
-                                              "textToSpeech": "Found It! : "
-                                            }
-                                          },
-                                          {
-                                            "basicCard": {
-                                              "title": song, // song title
-                                              "subtitle": "preferred artist : "+artist, // singer
-                                              "formattedText": "<b>Spotify</b> is a new digital music service that enables users to remotely source millions of different songs on various record labels from a laptop, smartphone or other device.",
-                                              "image": {
-                                                "url": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
-                                                "accessibilityText": "open.spotify.com"
-                                              },
-                                              "buttons": [
-                                                {
-                                                  "title": "Open", // open
-                                                  "openUrlAction": {
-                                                    "url": externalLink //url 
-                                                  }
-                                                }
-                                              ],
-                                              "imageDisplayOptions": "CROPPED"
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  },"fulfillmentMessages": [
-                                    {
-                                      "text": {
-                                        "text": [
-                                          externalLink
-                                        ]
-                                      }
-                                    }
-                                  ]
-                            }
-   
-*/
                             
                         }
                     });
