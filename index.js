@@ -76,12 +76,12 @@ try{
                                               "mediaObjects": [
                                                 {
                                                   "contentUrl": contentUrl,
-                                                  "description": song,
+                                                  "description": "",
                                                   "icon": {
                                                     "url": icon,
                                                     "accessibilityText": "Ocean view"
                                                   },
-                                                  "name": "Jazz in Paris"
+                                                  "name": Song
                                                 }
                                               ]
                                             }
