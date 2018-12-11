@@ -59,8 +59,32 @@ try{
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
                             
                             var text = "[I'm an inline-style link](https://www.google.com)";
-            
                             var pass = {
+                                "fulfillmentMessages": [
+                                    {
+                                      "card": {
+                                        "title": "Title: this is a card title",
+                                        "subtitle": "This is the body text of a card.  You can even use line\n  breaks and emoji! 💁",
+                                        "imageUri": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
+                                        "buttons": [
+                                          {
+                                            "text": "This is a button",
+                                            "postback": "https://assistant.google.com/"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "quickReplies": {
+                                        "quickReplies": [
+                                          "Quick Reply",
+                                          "Suggestion"
+                                        ]
+                                      }
+                                    }
+                                  ]
+                            }
+                   /*         var pass = {
                                 
                                 "payload": {
                                     "google": {
@@ -107,7 +131,7 @@ try{
                                       }
                                     }
                                   ]
-                            }
+                            }*/
 
                             
                                
