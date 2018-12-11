@@ -81,7 +81,7 @@ try{
                                                     "url": icon,
                                                     "accessibilityText": "Ocean view"
                                                   },
-                                                  "name": Song
+                                                  "name": song
                                                 }
                                               ]
                                             }
