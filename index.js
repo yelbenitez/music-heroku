@@ -82,9 +82,15 @@ try{
                                           "Suggestion"
                                         ]
                                       }
+                                    },
+                                    {
+                                        "text":{
+                                            "text":[
+                                                "Found it !"
+                                            ]
+                                        }
                                     }
-                                  ],
-                                  fulfillmentText: "Found it!"
+                                  ]
                             }
                    /*         var pass = {
                                 
