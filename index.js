@@ -60,7 +60,7 @@ try{
                             
                             var text = "[I'm an inline-style link](https://www.google.com)";
                             var pass = {
-                                fulfillmentText: "Found it!",
+                                
                                 "fulfillmentMessages": [
                                     {
                                       "card": {
@@ -83,7 +83,8 @@ try{
                                         ]
                                       }
                                     }
-                                  ]
+                                  ],
+                                  fulfillmentText: "Found it!"
                             }
                    /*         var pass = {
                                 
