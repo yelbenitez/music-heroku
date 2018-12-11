@@ -63,20 +63,30 @@ try{
                                 "fulfillmentMessages": [
                                     {
                                       "card": {
-                                        "title": song,
-                                        "subtitle": "Preferred artist : "+artist,
+                                        "title": "Title: this is a card title",
+                                        "subtitle": "This is the body text of a card.  You can even use line\n  breaks and emoji! 💁",
                                         "imageUri": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
                                         "buttons": [
                                           {
-                                            "text": "Play",
-                                            "postback": externalLink
+                                            "text": "This is a button",
+                                            "postback": "https://assistant.google.com/"
                                           }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "quickReplies": {
+                                        "quickReplies": [
+                                          "Quick Reply",
+                                          "Suggestion"
                                         ]
                                       }
                                     }
                                   ]
                             }
 
+                            
+                               
                             response.send(pass); 
                         }
                     });
