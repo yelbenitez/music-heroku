@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const http = require('https');
 var unirest = require('unirest');
 const {Card, Suggestion} = require('dialogflow-fulfillment');
+var md = require('markdown');
 
 var port = process.env.PORT || 8080;
 
@@ -56,7 +57,8 @@ try{
                             let externalLink = track.album.artists[0].external_urls["spotify"];
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
-                         
+                            
+                            var text = "[I'm an inline-style link](https://www.google.com)";
             
                             var pass = {
                                 
@@ -94,7 +96,7 @@ try{
                                       }
                                     }
                                   },
-                                  fulfillmentText: "Here is the link "+externalLink
+                                  fulfillmentText: text
                             }
 
                             
