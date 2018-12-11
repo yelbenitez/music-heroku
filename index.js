@@ -26,7 +26,7 @@ try{
                     var req = unirest("GET", "https://api.spotify.com/v1/search");
 
                     var song = bodyContent.queryResult.parameters["any"];
-                    var artist = bodyContent.queryResult.parameters["music-artist"];
+                    var artist = bodyContent.queryResult.parameters["artist"];
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
