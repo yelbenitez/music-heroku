@@ -63,78 +63,20 @@ try{
                                 "fulfillmentMessages": [
                                     {
                                       "card": {
-                                        "title": "Title: this is a card title",
-                                        "subtitle": "This is the body text of a card.  You can even use line\n  breaks and emoji! 💁",
+                                        "title": song,
+                                        "subtitle": "Preferred artist : "+artist,
                                         "imageUri": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
                                         "buttons": [
                                           {
-                                            "text": "This is a button",
-                                            "postback": "https://assistant.google.com/"
+                                            "text": "Play",
+                                            "postback": externalLink
                                           }
-                                        ]
-                                      }
-                                    },
-                                    {
-                                      "quickReplies": {
-                                        "quickReplies": [
-                                          "Quick Reply",
-                                          "Suggestion"
                                         ]
                                       }
                                     }
                                   ]
                             }
-                   /*         var pass = {
-                                
-                                "payload": {
-                                    "google": {
-                                      "expectUserResponse": true,
-                                      "richResponse": {
-                                        "items": [
-                                          {
-                                            "simpleResponse": {
-                                              "textToSpeech": "Found It! : "
-                                            }
-                                          },
-                                          {
-                                            "basicCard": {
-                                              "title": song, // song title
-                                              "subtitle": "preferred artist : "+artist, // singer
-                                              "formattedText": "<b>Spotify<b> is a new digital music service that enables users to remotely source millions of different songs on various record labels from a laptop, smartphone or other device.",
-                                              "image": {
-                                                "url": "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856",
-                                                "accessibilityText": "open.spotify.com"
-                                              },
-                                              "buttons": [
-                                                {
-                                                  "title": "Open", // open
-                                                  "openUrlAction": {
-                                                    "url": externalLink //url 
-                                                  }
-                                                }
-                                              ],
-                                              "imageDisplayOptions": "CROPPED"
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  },"fulfillmentMessages": [
-                                    {
-                                      "text": {
-                                        "text": [
-                                          externalLink
-                                        ],
-                                        "openUrlAction": {
-                                            "url": externalLink //url 
-                                          }
-                                      }
-                                    }
-                                  ]
-                            }*/
 
-                            
-                               
                             response.send(pass); 
                         }
                     });
