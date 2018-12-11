@@ -99,10 +99,7 @@ try{
                                     {
                                       "text": {
                                         "text": [
-                                          "[I'm an inline-style link](https://www.google.com)"
-                                        ],
-                                        "url":[
-                                            "https://firebasestorage.googleapis.com/v0/b/music-6643e.appspot.com/o/512.png?alt=media&token=9c463039-24c6-4947-8dcf-5a25d0628856"
+                                          externalLink
                                         ]
                                       }
                                     }
