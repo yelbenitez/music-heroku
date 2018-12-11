@@ -96,9 +96,7 @@ try{
                                                           "name": track_name
                                                         }
                                                       ]
-                                                    }
-                                                  },{
-                                                    "buttons": [
+                                                    }, "buttons": [
                                                         {
                                                           "title": "Open", // open
                                                           "openUrlAction": {
@@ -106,8 +104,7 @@ try{
                                                           }
                                                         }
                                                       ]
-                                                  }
-
+                                                  },
                                                 ],
                                                 "suggestions": [
                                                   {
