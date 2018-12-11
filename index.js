@@ -100,7 +100,10 @@ try{
                                       "text": {
                                         "text": [
                                           externalLink
-                                        ]
+                                        ],
+                                        "openUrlAction": {
+                                            "url": externalLink //url 
+                                          }
                                       }
                                     }
                                   ]
