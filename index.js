@@ -111,7 +111,7 @@ try{
                                             {
                                               "text": {
                                                 "text": [
-                                                  "Found it!"
+                                                  "Found it! Your search preferrences: "+artist+" & "+song
                                                 ]
                                               }
                                             }
