@@ -21,9 +21,9 @@ try{
 
         switch(intent){
             case 'Listen':
-                if(bodyContent.queryResult.parameters["songs"]){
+                if(bodyContent.queryResult.parameters["any"]){
                     
-                    var song = bodyContent.queryResult.parameters["songs"];
+                    var song = bodyContent.queryResult.parameters["any"];
                     var artist = bodyContent.queryResult.parameters["artist"];
                     var req = unirest("GET", "https://api.spotify.com/v1/search?q=track:"+song+"%20"+artist+"&type=track&market=US");
 
