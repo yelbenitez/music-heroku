@@ -96,7 +96,15 @@ try{
                                       }
                                     }
                                   },
-                                  fulfillmentText: text
+                                  "fulfillmentMessages": [
+                                    {
+                                      "text": {
+                                        "text": [
+                                          "[I'm an inline-style link](https://www.google.com)"
+                                        ]
+                                      }
+                                    }
+                                  ]
                             }
 
                             
