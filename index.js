@@ -30,10 +30,10 @@ try{
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQCWZhUN2zR7ri20H8W9MD-z6J5mdoFjbGKehmceFJ9mPyLEqO7w0_WeVcE-4EuO7yVkyqmr1J4uW7UhmNfpn9SLeC7wa1olzWIfGR0TuYD_lRP7_xYjXbTAmswWdEptjACJ15n0lXxd4jg3_KaX8Xlv_cMg3d4omA'})
+                    req.header({'Authorization':'Bearer BQCs6wL8mTpnticMgtJOZCurFHkDB-1AsPhXrNSUJeU5NqtwlN77Jp2f07Wp2Ti1OfCfG-WdVfERzdAzMojZKsv7nlDDusxm25jPWMKDLOJHvE72BShBDUXoJPgaVq1vRoTFXDS8DnfMxHzhbANPikSUSvsfH9-ayg'})
                     req.query({
-                        "q": "name:"+song,
-                        "type": "album,track"
+                        "q": "track:"+song+"%20artist"+artist,
+                        "type": "track"
                     });
 
                //     req.send("{}"); //error the body
@@ -55,7 +55,14 @@ try{
 
                             let track = res.body.tracks.items[0];
                             let externalLink = track.album.artists[0].external_urls["spotify"];
-                            let contentUrl = track["preview_url"]; // only preview
+                            let contentUrl = "";// track["preview_url"];
+                            for(let x = 0 ;x < res.body.tracks.items.length; x++){
+                                if(res.body.tracks.items[x]["preview_url"]!='null'){
+                                    contentUrl = res.body.tracks.items[x]["preview_url"];
+                                    break;
+                                }
+                            }
+                            // only preview
                             let icon = track.album.images[0]["url"];
 
                             response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
@@ -153,7 +160,6 @@ try{
                             }
    
 */
-
                             response.send(pass); 
                         }
                     });
