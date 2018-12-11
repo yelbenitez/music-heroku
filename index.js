@@ -94,7 +94,16 @@ try{
                                         ]
                                       }
                                     }
-                                  }
+                                  },
+                                  "fulfillmentMessages": [
+                                    {
+                                      "text": {
+                                        "text": [
+                                          "Found it!"
+                                        ]
+                                      }
+                                    }
+                                  ]
                             }
                         /*   
                             var pass = {
