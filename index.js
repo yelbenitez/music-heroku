@@ -25,7 +25,7 @@ try{
                     
                     var song = bodyContent.queryResult.parameters["songs"];
                     var artist = bodyContent.queryResult.parameters["artist"];
-                    var req = unirest("GET", "https://api.spotify.com/v1/search?q=track:"+song+"%20"+artist+"&type=track");
+                    var req = unirest("GET", "https://api.spotify.com/v1/search?q=track:"+song+"%20"+artist+"&type=track&market=US");
 
                    
                //     var location = bodyContent.queryResult.parameters["any"];
