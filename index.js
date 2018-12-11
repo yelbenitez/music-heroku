@@ -60,6 +60,7 @@ try{
                             
                             var text = "[I'm an inline-style link](https://www.google.com)";
                             var pass = {
+                                fulfillmentText: "Found it!",
                                 "fulfillmentMessages": [
                                     {
                                       "card": {
@@ -73,19 +74,9 @@ try{
                                           }
                                         ]
                                       }
-                                    },
-                                    {
-                                      "quickReplies": {
-                                        "quickReplies": [
-                                          "Quick Reply",
-                                          "Suggestion"
-                                        ]
-                                      }
                                     }
                                   ]
                             }
-
-                            
                                
                             response.send(pass); 
                         }
