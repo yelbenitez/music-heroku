@@ -22,19 +22,20 @@ try{
         switch(intent){
             case 'Listen':
                 if(bodyContent.queryResult.parameters["songs"]){
-                                    
-                    var req = unirest("GET", "https://api.spotify.com/v1/search");
-
+                    
                     var song = bodyContent.queryResult.parameters["songs"];
                     var artist = bodyContent.queryResult.parameters["artist"];
+                    var req = unirest("GET", "https://api.spotify.com/v1/search?q=track:"+song+"%20"+artist+"&type=track");
+
+                   
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQCs6wL8mTpnticMgtJOZCurFHkDB-1AsPhXrNSUJeU5NqtwlN77Jp2f07Wp2Ti1OfCfG-WdVfERzdAzMojZKsv7nlDDusxm25jPWMKDLOJHvE72BShBDUXoJPgaVq1vRoTFXDS8DnfMxHzhbANPikSUSvsfH9-ayg'})
-                    req.query({
-                        "q": "track:"+song+"%20artist"+artist,
+                    req.header({'Authorization':'Bearer BQDivDIbr4tkcKJMGhqmSZZUo4FtaTEMtW0beq_ROAxhTsjdkp0S1vczB_cw-LBldNekiWI1h1cjjYdD-2iPhqv8VTek9zkkaIQaCBt4_afnb4XsDlNh2yk1fRolhBZ6AI0zJgRF7XW5LnTNt6f_JwGc91xglEMlcg'})
+                /*    req.query({
+                        "q": "track:"+song+"%20"+artist,
                         "type": "track"
-                    });
+                    });*/
 
                //     req.send("{}"); //error the body
                     console.log(req);
@@ -53,65 +54,77 @@ try{
                             response.send(pass);
                         }else if(res.body.tracks.items.length > 0) {
 
-                            let track = res.body.tracks.items[0];
-                            let externalLink = track.album.artists[0].external_urls["spotify"];
-                            let contentUrl = "";// track["preview_url"];
+                           // let track = res.body.tracks.items[0];
+                        //    let externalLink = track.album.artists[0].external_urls["spotify"];
+                        //    let contentUrl = "";// track["preview_url"];
+                           
                             for(let x = 0 ;x < res.body.tracks.items.length; x++){
-                                if(res.body.tracks.items[x]["preview_url"]!='null'){
-                                    contentUrl = res.body.tracks.items[x]["preview_url"];
+                               
+                                if(res.body.tracks.items[x]["preview_url"]!=null){
+
+                                    let track = res.body.tracks.items[x];
+                                    let contentUrl = track["preview_url"];
+                                      // only preview
+                                    let icon = track.album.images[0]["url"];
+                                    let res_artist = track.album.artists[0]["name"];
+                                    let album = track.album["name"];
+                                    let track_name = track["name"]
+
+                                    response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
+                                    var pass = {
+                                        "payload": {
+                                            "google": {
+                                              "expectUserResponse": true,
+                                              "richResponse": {
+                                                "items": [
+                                                  {
+                                                    "simpleResponse": {
+                                                      "textToSpeech": "Now playing : "
+                                                    }
+                                                  },
+                                                  {
+                                                    "mediaResponse": {
+                                                      "mediaType": "AUDIO",
+                                                      "mediaObjects": [
+                                                        {
+                                                          "contentUrl": contentUrl,
+                                                          "description": "Artist : "+res_artist +"   Album : "+album,
+                                                          "icon": {
+                                                            "url": icon,
+                                                            "accessibilityText": "Ocean view"
+                                                          },
+                                                          "name": track_name
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                "suggestions": [
+                                                  {
+                                                    "title": "Cancel"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          "fulfillmentMessages": [
+                                            {
+                                              "text": {
+                                                "text": [
+                                                  "Found it!"
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                    }
+
+                                  response.send(pass); 
                                     break;
                                 }
                             }
-                            // only preview
-                            let icon = track.album.images[0]["url"];
+                            
 
-                            response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
-                            var pass = {
-                                "payload": {
-                                    "google": {
-                                      "expectUserResponse": true,
-                                      "richResponse": {
-                                        "items": [
-                                          {
-                                            "simpleResponse": {
-                                              "textToSpeech": "Now playing : "
-                                            }
-                                          },
-                                          {
-                                            "mediaResponse": {
-                                              "mediaType": "AUDIO",
-                                              "mediaObjects": [
-                                                {
-                                                  "contentUrl": contentUrl,
-                                                  "description": "",
-                                                  "icon": {
-                                                    "url": icon,
-                                                    "accessibilityText": "Ocean view"
-                                                  },
-                                                  "name": song
-                                                }
-                                              ]
-                                            }
-                                          }
-                                        ],
-                                        "suggestions": [
-                                          {
-                                            "title": "Cancel"
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  },
-                                  "fulfillmentMessages": [
-                                    {
-                                      "text": {
-                                        "text": [
-                                          "Found it!"
-                                        ]
-                                      }
-                                    }
-                                  ]
-                            }
+                           
                         /*   
                             var pass = {
                                 
@@ -160,7 +173,7 @@ try{
                             }
    
 */
-                            response.send(pass); 
+                            
                         }
                     });
 
