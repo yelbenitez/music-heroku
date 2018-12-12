@@ -95,7 +95,11 @@ try{
                                                           },
                                                           "name": track_name
                                                         }
-                                                      ],
+                                                      ]
+                                                    }
+                                                  },{
+                                                    "basicCard":{
+                                                        
                                                       "buttons": [
                                                         {
                                                           "title": "Open", // open
