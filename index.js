@@ -97,20 +97,7 @@ try{
                                                         }
                                                       ]
                                                     }
-                                                  },{
-                                                    "basicCard":{
-                                                        
-                                                      "buttons": [
-                                                        {
-                                                          "title": "Open", // open
-                                                          "openUrlAction": {
-                                                            "url": externalLink //url 
-                                                          }
-                                                        }
-                                                      ]
-                                                    }
                                                   }
-
                                                 ],
                                                 "suggestions": [
                                                   {
