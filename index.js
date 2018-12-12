@@ -95,6 +95,14 @@ try{
                                                           },
                                                           "name": track_name
                                                         }
+                                                      ],
+                                                      "buttons": [
+                                                        {
+                                                          "title": "Open", // open
+                                                          "openUrlAction": {
+                                                            "url": externalLink //url 
+                                                          }
+                                                        }
                                                       ]
                                                     }
                                                   }
