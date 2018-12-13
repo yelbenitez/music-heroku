@@ -11,10 +11,12 @@
   "dependencies": {
     "actions-on-google": "^2.5.0",
     "body-parser": "^1.18.3",
+    "client-sessions": "^0.8.0",
     "dialogflow-fulfillment": "^0.6.1",
     "httpls": "^0.1.1",
     "markdown": "^0.5.0",
     "restify": "^7.3.0",
+    "restify-session": "^1.1.1",
     "unirest": "^0.5.1"
   }
 }
