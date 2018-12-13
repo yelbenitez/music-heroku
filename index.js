@@ -79,7 +79,7 @@ try{
                                                 "items": [
                                                   {
                                                     "simpleResponse": {
-                                                      "textToSpeech": "Now playing : "
+                                                      "textToSpeech": "Now playing "
                                                     }
                                                   },
                                                   {
