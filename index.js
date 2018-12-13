@@ -30,7 +30,7 @@ try{
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQAYZyZxBhzEJCWO1rb5yPEmWsrEKGg2l3Kk6dLmiEyzKtbZF9Mu1mVODowVBngmzJFfb94AiBQJsY81c-BjZXwYBKQBaKK7WKljofGbzgqJXuNCSv6OK7lUOiX5GmrVQ7rzvK6Bh1locolBHOasWE8vZpNRcMPZRQ'})
+                    req.header({'Authorization':'Bearer BQA08Z81yyI3upY7hV6ba-otQuQ3LUI0Uoo7tzY_gCBKjsr5rBqqzJ5Dr5UvyJ86950A5ktrxWWFYc7eOvckniwYCuYEI7Y8_Hg2ttXGO5DIz-JMVSCK90T2AMvvy6MwYiQF1ad35WCTBbvA-Hd0ZvZFUmIo-Hwh8g'})
                 /*    req.query({
                         "q": "track:"+song+"%20"+artist,
                         "type": "track"
