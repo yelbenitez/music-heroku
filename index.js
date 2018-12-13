@@ -30,20 +30,20 @@ try{
                //     var location = bodyContent.queryResult.parameters["any"];
 
                     req.header({'Content-Type':'application/json'});
-                    req.header({'Authorization':'Bearer BQCNtYIXTCtmUkKTqJMPlDeoVe7kTnMWDgwHywGwvXJBX0b4687Q-rZfRTCXSupYSdxPxvkMOXxnjVwaZAsKKSrUnqcmnx5LhpIpNrZJov1UMFYEepgfqZ_CWfdNd67hwVjZhqqzNPHrw0y7JwKqFHzIxr1vZHW83g'})
+                    req.header({'Authorization':'Bearer BQCsoBagOrN10Tz7wUWr8ecMvEvfH3VfS3zmbj2z95HW45XxOOOytgtyULp_FMPSGz4NWzubEVffC45lTzuCkOaP2x31ggoyYqiVXMa64CL_89JvenHgSk70pfUkUiUuGfNWVfy6y_Ucaxu51gnFa0Xp8vESxHshvA'})
                 /*    req.query({
                         "q": "track:"+song+"%20"+artist,
                         "type": "track"
                     });*/
 
                //     req.send("{}"); //error the body
-                    console.log(req);
+                    console.log(req.end);
                     req.end(function(res) {
                         if(res.error) {
                             response.setHeader('Content-Type', 'application/json');
                             var pass = {
                                         fulfillmentText: 'Sorry, something went wrong'
-                                    }            
+                                    }        
                             response.send(pass);
                         }else if(res.body.tracks.items.length == 0){
                             response.setHeader('Content-Type', 'application/json');
